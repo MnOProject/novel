@@ -1,6 +1,3 @@
-# Ignore Ren'Py game files
-game/
-
 # Ignore Ren'Py build files
 renpy.bmp
 renpy.log
