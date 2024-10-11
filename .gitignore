@@ -1,0 +1,32 @@
+# Ignore Ren'Py game files
+game/
+
+# Ignore Ren'Py build files
+renpy.bmp
+renpy.log
+renpy.pyc
+renpy.pyo
+
+# Ignore Ren'Py cache files
+cache/
+
+# Ignore Ren'Py temporary files
+*.tmp
+
+# Ignore Ren'Py backup files
+*.bak
+
+# Ignore Ren'Py distribution files
+dist/
+
+# Ignore Ren'Py virtual environment files
+.venv/
+
+# Ignore Ren'Py IDE files
+.idea/
+
+# Ignore Ren'Py editor files
+*.rpe
+
+# Ignore Ren'Py launcher files
+*.rpyc
