@@ -347,7 +347,7 @@ translate None strings:
 
     # renpy/common/00action_other.rpy:379
     old "Language [text]"
-    new "Язык [text]"
+    new "Языкккк [text]"
 
     # renpy/common/00action_other.rpy:744
     old "Open [text] directory."
