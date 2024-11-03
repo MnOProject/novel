@@ -27,3 +27,22 @@ dist/
 
 # Ignore Ren'Py launcher files
 *.rpyc
+*.rpyb
+
+# Ignore Ren'Py save files
+*.save
+saves/
+
+# Ignore Ren'Py log files
+log.txt
+errors.txt
+traceback.txt
+files.txt
+
+# Ignore venv
+.venv/
+
+# Ignore macOS files
+.DS_Store 
+.AppleDouble 
+.LSOverride
