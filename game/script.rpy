@@ -74,7 +74,6 @@ label start:
     
     hide scene_1_yan_1
     show scene_2_bg_discord_1
-    show scene_2_bg_monitor_1
     with dissolve
 
     
@@ -92,7 +91,6 @@ label start:
     
     hide scene_1_yan_1
     hide scene_2_bg_discord_1
-    hide scene_2_bg_monitor_1
     hide scene_2_bg_room_1
     hide p_yan
     
