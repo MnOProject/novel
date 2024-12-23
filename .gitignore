@@ -46,3 +46,7 @@ files.txt
 .DS_Store 
 .AppleDouble 
 .LSOverride
+
+# Ignore Ren-Py save files
+*.save
+saves/
