@@ -212,7 +212,8 @@ label start:
 
     # Переход на 4-ую сцену
     
-    scene yan_in_the_bus_00040
+    scene bus_station
+    show yan_in_the_bus_station
     
     p_yan "С чего стоит начать создавать игру?"
     p_yan "Технические вопросы уже обсудим с ребятами, а вот насчёт идеи надо подумать"
@@ -300,6 +301,11 @@ label start:
     scene ds_diana_talk
     
     p_diana "И что тогда выберем?"
+    
+label select:
+    
+    if selected_game < 2:
+        p_yan "Хм, что-то мне кажется, с хоррором у нас не получится, лучше выбирать между симулятором и платформером"
     
     menu:
         "Платформер":
@@ -486,8 +492,7 @@ label start:
                     scene ds_miroslav_talk
                     
                     p_miroslav "Согласен, я это и хотел услышать"
-                    
-        "Хоррор":
+        "Хоррор" if selected_game >= 2:
             $ is_win = False
             
             scene ds_yan_talk
@@ -555,35 +560,25 @@ label start:
 
     "Прошли 2 недели, ребята закончили создавать игру, и пришли на номинирование "
     
+    scene far
+    
+    show all_in_far
+    
     if is_win:
-        scene diana_webcam
-        
         p_diana "Ох, я уже начинаю волноваться"
-        
-        scene miroslav_webcam
         
         p_miroslav "Да ладно тебе, всё будет супер, мы точно займём призовое место"
         
-        scene diana_webcam
-        
         p_diana "Очень надеюсь"
-        
-        scene yan_webcam
         
         p_yan "И правда, не переживайте, мы отлично потрудились"
         
         p_yan "Мне очень нравится наша игра, и я уверен, что жюри тоже отлично её оценили, так что не трусим"
-        
-        scene diana_webcam
-        
+    
         p_diana "Согласна"
         
         p_diana "Пойдёмте займём места"
-        
-        scene miroslav_webcam
-        
-        p_miroslav "Смотрите, уже начинается, это видимо ведущий"
-        
+    
         scene scene_scene
         
         show anchor
@@ -737,15 +732,17 @@ label start:
         
         "Ян спокойно засыпает, но после просыпается, совсем не помнив, что было до этого"
         
+        jump select
+        
         # End of the other branch
 
     if is_win:
         "После выигрыша билетов на море, ребята незамедлительно планирует поездку и летят отдыхать"
-        scene sad_yan_home
-        
-        scene diana_place
+        scene airport_inner
         
         p_diana "Я немного волнуюсь, это первый раз, когда я полечу"
+        
+        scene diana_place
         
         p_miroslav "Не переживай, самолёты — это самый безопасный вид транспорта"
         
@@ -754,6 +751,11 @@ label start:
         p_diana "И уже не так страшно"
         
         p_yan "Вот и хорошо, мы же летим отдыхать"
+        
+        scene beach
+        show yan_beach
+        show miroslav_beach
+        show diana_beach
         
         p_miroslav "Я честно до сих пор нахожусь в шоке, что у нас получилось выиграть первое место, и получить эти путёвки"
         
@@ -765,31 +767,17 @@ label start:
         
         p_yan "Теперь я уверен куда хочу двигаться дальше, и кем хочу быть"
         
-        scene beach
-        
-        show diana_beach
-        
         p_diana "Пойдёмте поиграем в волейбол, не зря же я брала мячик"
-        
-        hide diana_beach
-        
-        show miroslav_beach
-        
+            
         p_miroslav "Погнали"
         
-        hide miroslav_beach
-        
-        show yan_beach
-        
+        scene yan_laptop
+
         p_yan "Я попозже присоединюсь, сейчас кое-что проверю в ноутбуке"
         
-        hide yan_beach
-        
-        hide diana_beach
+        p_yan "Так, а что это за оповещение с почты?"
         
         scene laptop
-        
-        p_yan "Так, а что это за оповещение с почты?"
         
         p_yan "Да ну..."
         
@@ -797,11 +785,17 @@ label start:
         
         p_yan "РЕБЯТА, ИДИТЕ СЮДА!"
         
+        scene beach
+        show miroslav_beach
+        show diana_beach
+        
         p_miroslav "Чего это он кричит?"
         
         p_diana "Не знаю, пойдём посмотрим"
         
         p_yan "Здесь жёсткий даблйю, смотрите какое нам письмо пришло"
+        
+        scene laptop
         
         p_yan "Вот, читайте."
         
@@ -955,7 +949,7 @@ label start:
         pause 1
 
         # Затухание из черного кадра снова в игру
-        scene concept_room with fade
+        scene whiteboard with fade
         
         "Спустя недолгие объяснения о принципе работы Яна и его задачах, Николай начинают его обучать"
         
@@ -998,6 +992,8 @@ label start:
         """
         
         p_yan "Хорошо"
+        
+        scene all_office
 
         p_nikolai """
         Смотри, это наш основной офис, здесь находятся почти все наши разработчики, которые учувствуют в проекте
@@ -1047,13 +1043,10 @@ label start:
 
         # Немного подождать на чёрном кадре
         pause 1
-
-        # Затухание из черного кадра снова в игру
-        scene programmer_hall with fade
         
         "На следующий день, Ян также идёт на стажировку"
         
-        # /Кадр «Николай и Ян стоят в общем зале у программиста»/ 
+        scene programmer_hall with fade
         
         show nikolai_p
         
