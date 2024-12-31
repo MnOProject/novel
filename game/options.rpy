@@ -12,8 +12,10 @@
 ##
 ## Символы "_()", окружающие название, отмечают его как пригодное для перевода.
 
-define config.name = _("novel")
+define config.name = _("GameDev in reality")
 
+define gui.textfont = "fonts/Ubuntu-Regular.ttf"
+define gui.textsize = 30
 
 ## Определяет, показывать ли заголовок, данный выше, на экране главного меню.
 ## Установите на False, чтобы спрятать заголовок.
@@ -152,7 +154,7 @@ define config.save_directory = "novel-1728291959"
 ##
 ## Иконка, показываемая на панели задач или на dock.
 
-define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "gui/icon.ico"
 
 
 ## Настройка Дистрибутива ######################################################
@@ -161,6 +163,15 @@ define config.window_icon = "gui/window_icon.png"
 ## проекта.
 
 init python:
+    style.menu_window.yalign = 0.0
+    style.menu_window.left_padding = 20
+    style.menu_window.top_padding = 20
+
+    def main_menu_music_callback():
+        return "music/main_menu_1.mp3"
+    
+    # Указываем функцию для загрузки музыки
+    config.main_menu_music = main_menu_music_callback()
 
     ## Следующие функции берут образцы файлов. Образцы файлов не учитывают
     ## регистр и соответствующе зависят от директории проекта (base), с или без
