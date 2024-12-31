@@ -1,0 +1,52 @@
+# Ignore Ren'Py build files
+renpy.bmp
+renpy.log
+renpy.pyc
+renpy.pyo
+
+# Ignore Ren'Py cache files
+cache/
+
+# Ignore Ren'Py temporary files
+*.tmp
+
+# Ignore Ren'Py backup files
+*.bak
+
+# Ignore Ren'Py distribution files
+dist/
+
+# Ignore Ren'Py virtual environment files
+.venv/
+
+# Ignore Ren'Py IDE files
+.idea/
+
+# Ignore Ren'Py editor files
+*.rpe
+
+# Ignore Ren'Py launcher files
+*.rpyc
+*.rpyb
+
+# Ignore Ren'Py save files
+*.save
+saves/
+
+# Ignore Ren'Py log files
+log.txt
+errors.txt
+traceback.txt
+files.txt
+
+# Ignore venv
+.venv/
+
+# Ignore macOS files
+.DS_Store 
+.AppleDouble 
+.LSOverride
+
+# Ignore Ren-Py save files
+*.save
+saves/
